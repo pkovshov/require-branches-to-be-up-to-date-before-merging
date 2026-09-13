@@ -1,0 +1,15 @@
+name: Continuous Delivery
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  run-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v6      
+      - name: Run main
+        run: |
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          python main.py >> $GITHUB_STEP_SUMMARY 2>&1
