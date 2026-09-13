@@ -1,0 +1,13 @@
+name: Continuous Integration
+on: 
+  pull_request    
+jobs:
+  test-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v6      
+      - name: Run main
+        run: |
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          python main.py >> $GITHUB_STEP_SUMMARY 2>&1
