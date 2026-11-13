@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       CPCLOUD-account:
+        description: CPCLOUD-account
         type: boolean
         default: false
       CPCLOUD-daas:
