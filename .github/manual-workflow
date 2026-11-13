@@ -1,0 +1,19 @@
+name: Manual workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      CPCLOUD-account:
+        type: boolean
+        default: false
+      CPCLOUD-daas:
+        type: boolean
+        default: false
+
+jobs:
+  say-hi:
+    steps:
+      - name: Collect selected repositories
+        id: select
+      run: |
+        echo "HI" >> "$GITHUB_STEP_SUMMARY"
